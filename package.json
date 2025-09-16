@@ -1,0 +1,15 @@
+{
+  "name": "exemplos-aulas-backand-pj2025",
+  "version": "1.0.0",
+  "description": "projeto de exemplo jovem programdor",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jean",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
