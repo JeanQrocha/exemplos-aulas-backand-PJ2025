@@ -1,38 +1,28 @@
 import express from "express"
+import { exercicio1, exercicio2 } from "./services/exercicio.js"
 
 const app = express() //inicializando api com express
 
 //req = request , res = response
-app.get('/api/pessoa/:id', (req, res) => {
-    //query 
-    //
-    //params inicializa na URL dps do ?
-    //?nome=joao       ?idade=10
-    //& separa os parametros ?nome=joao&idade=10
+// app.get('/api/pessoa/:id', (req, res) => {
+//     //query 
+//     //
+//     //params inicializa na URL dps do ?
+//     //?nome=joao       ?idade=10
+//     //& separa os parametros ?nome=joao&idade=10
 
-    const nome = req.query.nome
+//     const nome = req.query.nome
 
-    res.status(200).send("Hello "+ nome)
-})
+//     res.status(200).send("Hello "+ nome)
+// })
 
 
 
-app.get('exercicio1/:id', (req, res) => {
-    
-    const num1 = req.params.num1
-    const num2 = req.params.num2
+// localhost:3000/exercicio1?num1=30&num2=45
+app.get('/exercicio1', exercicio1)
+// localhost:3000/exercicio2/30/45
+app.get('/exercicio2/:valorHora/:qtdeHoras', exercicio2)
 
-    console.log(req.params)
-    res.status(200).send(`resultado  ${num1 + num2}`)
-})
-app.get('/api/pessoa/:id', (req, res) => {
-   
-
-    const nome = req.query.nome
-
-    console.log(req.params)
-    res.status(200).send("Hello "+ nome)
-})
 
 app.listen(3000, () => {
     console.log('servidor rodando na porta 3000')
