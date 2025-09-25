@@ -1,4 +1,4 @@
-import { salario, somar } from "../services/exercicios.js"
+import { media, salario, somar } from "../services/exercicios.js"
 
 export const exercicio1Get = (req, res) => {
     const num1 = Number(req.query.num1)
@@ -24,6 +24,18 @@ export const exercicio2 = (req, res) => {
     const { valorHora, qtdeHoras } = req.params
     
     const result = salario(valorHora, qtdeHoras)
+
+    res.status(200).send({
+        result
+    })
+}
+
+export const exercicio3 = (req, res) => {
+    // const valorHora = req.params.valorHora
+    // const qtdeHoras = req.params.qtdeHoras
+    const { pessoa1, pessoa2, pessoa3, pessoa4, pessoa5} = req.params
+    
+    const result = media(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5)
 
     res.status(200).send({
         result
