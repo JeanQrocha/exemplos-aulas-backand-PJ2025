@@ -35,9 +35,9 @@ export const exercicio3 = (req, res) => {
     // const qtdeHoras = req.params.qtdeHoras
     const { pessoa1, pessoa2, pessoa3, pessoa4, pessoa5} = req.params
     
-    const result = media(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5)
+    const result = media(Number(pessoa1), Number(pessoa2), Number(pessoa3), Number(pessoa4), Number(pessoa5))
 
     res.status(200).send({
-        result
+        result: result / 5
     })
 }
