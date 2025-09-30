@@ -12,7 +12,7 @@ export const exercicio1Post = (req, res) => {
     const num2 = req.body.num2
     const result = somar(num1, num2)
     res.status(200).send({
-        msg: "O resultado é "+result,
+        msg: "O resultado é " + result,
         data: result,
         error: null
     })
@@ -22,7 +22,7 @@ export const exercicio2 = (req, res) => {
     // const valorHora = req.params.valorHora
     // const qtdeHoras = req.params.qtdeHoras
     const { valorHora, qtdeHoras } = req.params
-    
+
     const result = salario(valorHora, qtdeHoras)
 
     res.status(200).send({
@@ -33,11 +33,17 @@ export const exercicio2 = (req, res) => {
 export const exercicio3 = (req, res) => {
     // const valorHora = req.params.valorHora
     // const qtdeHoras = req.params.qtdeHoras
-    const { pessoa1, pessoa2, pessoa3, pessoa4, pessoa5} = req.params
-    
-    const result = media(Number(pessoa1), Number(pessoa2), Number(pessoa3), Number(pessoa4), Number(pessoa5))
+    const pessoa1 = req.bory.pessoa1
+    const pessoa2 = req.bory.pessoa2
+    const pessoa3 = req.bory.pessoa3
+    const pessoa4 = req.bory.pessoa4
+    const pessoa5 = req.bory.pessoa5
+
+    const result = media(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5)
 
     res.status(200).send({
-        result: result / 5
+        msg: "O resultado é " + result,
+        data: result,
+        error: null
     })
 }
