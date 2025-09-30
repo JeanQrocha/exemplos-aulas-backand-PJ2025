@@ -31,13 +31,8 @@ export const exercicio2 = (req, res) => {
 }
 
 export const exercicio3 = (req, res) => {
-    // const valorHora = req.params.valorHora
-    // const qtdeHoras = req.params.qtdeHoras
-    const pessoa1 = req.bory.pessoa1
-    const pessoa2 = req.bory.pessoa2
-    const pessoa3 = req.bory.pessoa3
-    const pessoa4 = req.bory.pessoa4
-    const pessoa5 = req.bory.pessoa5
+    
+    const {pessoa1, pessoa2, pessoa3, pessoa4, pessoa5} = req.bory
 
     const result = media(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5)
 
