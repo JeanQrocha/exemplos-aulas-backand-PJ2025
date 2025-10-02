@@ -1,4 +1,4 @@
-import { media, salario, somar } from "../services/exercicios.js"
+import { media, salario, somar, km } from "../services/exercicios.js"
 
 export const exercicio1Get = (req, res) => {
     const num1 = Number(req.query.num1)
@@ -32,7 +32,11 @@ export const exercicio2 = (req, res) => {
 
 export const exercicio3 = (req, res) => {
     
-    const {pessoa1, pessoa2, pessoa3, pessoa4, pessoa5} = req.bory
+    const pessoa1 = req.body.pessoa1
+    const pessoa2 = req.body.pessoa2
+    const pessoa3 = req.body.pessoa3
+    const pessoa4 = req.body.pessoa4
+    const pessoa5 = req.body.pessoa5
 
     const result = media(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5)
 
@@ -41,4 +45,28 @@ export const exercicio3 = (req, res) => {
         data: result,
         error: null
     })
+}
+
+export const exercicio4 = (req, res) => {
+    const milhas = req.body.milhas
+
+    const result = km(milhas)
+
+    res.status(200).send({
+        msg: "O resultado é" + result,
+        data: result,
+        error: null
+    })
+}
+
+export const exercicio4get = (req, res) => {
+    const milhas = Number(req.query.milhas)
+
+    const result = km(milhas)
+
+    res.status(200).send({
+        result
+    })
+
+
 }

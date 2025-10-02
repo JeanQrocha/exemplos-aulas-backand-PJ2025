@@ -15,3 +15,9 @@ export function media(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5) {
 
     return result/5;
 }
+
+export function km(milhas) {
+    const result = milhas * 1.60934;
+
+    return result;
+}
